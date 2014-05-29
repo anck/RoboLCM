@@ -32,7 +32,7 @@ public class Characterstart : MonoBehaviour
 	void Update()
 	{
 
-			if(Input.GetButtonDown("Fire1"))
+			if(Input.GetButtonDown("Horizontal"))
 			{		
 
 				// If the run button is pressed and the player is grounded and the character is running forward then the player should jump.
@@ -48,7 +48,7 @@ public class Characterstart : MonoBehaviour
 				}
 				
 			}
-			else if(Input.GetButtonUp("Fire1"))
+			else if(Input.GetButtonUp("Horizontal"))
 			{		
 			
 				// If the jump button is pressed and the player is grounded and the character is running forward then the player should jump.
@@ -66,6 +66,7 @@ public class Characterstart : MonoBehaviour
 				
 		}
 	}
+
 
 
 	//everything in the physics we set in the fixupdate 

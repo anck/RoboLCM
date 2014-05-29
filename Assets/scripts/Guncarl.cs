@@ -20,7 +20,7 @@ public class Guncarl : MonoBehaviour
 	void Update ()
 	{
 		// If the fire button is pressed...
-		if(Input.GetButtonDown("Fire2"))
+		if(Input.GetButtonDown("Fire1"))
 		{
 			// ... set the animator Shoot trigger parameter and play the audioclip.
 			anim.SetTrigger("Shoot");
