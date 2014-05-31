@@ -13,10 +13,16 @@ public class PlayerControl : MonoBehaviour
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	//public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
+	public bool interact = false;
+
+	public Transform lineStart, lineEnd;
+	public RaycastHit2D whatIHit; 
 
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
-	private Animator anim;					// Reference to the player's animator component.
+	private Animator anim;		
+
+	// Reference to the player's animator component.
 
 
 	void Awake()
@@ -37,7 +43,35 @@ public class PlayerControl : MonoBehaviour
 //			jump = true;
 
 		Movement ();
+		RayCasting ();
 	}
+
+	void RayCasting()
+	{
+
+		Debug.DrawLine(lineStart.position, lineEnd.position, Color.green);
+
+		if(Physics2D.Linecast(lineStart.position, lineEnd.position, 1 << LayerMask.NameToLayer("Enemy")))
+		{
+			//takes the individual object it hits in enemy layer. Otherwise it will take out all enemies.
+			whatIHit = Physics2D.Linecast(lineStart.position, lineEnd.position, 1 << LayerMask.NameToLayer("Enemy"));
+			interact = true;
+
+		}
+		else
+		{
+			interact = false;
+
+		}
+
+
+		if (Input.GetKeyDown (KeyCode.Space) && interact == true) 
+		{
+			Destroy (whatIHit.collider.gameObject);		
+		}
+
+	}
+
 
 	void Movement()
 	{

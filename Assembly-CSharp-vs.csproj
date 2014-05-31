@@ -49,6 +49,7 @@
      <Compile Include="Assets\scripts\CameraFollow.cs" />
      <Compile Include="Assets\scripts\Characterfinal.cs" />
      <Compile Include="Assets\scripts\Characterstart.cs" />
+     <Compile Include="Assets\scripts\EnemyControl.cs" />
      <Compile Include="Assets\scripts\FlipIt.cs" />
      <Compile Include="Assets\scripts\Guncarl.cs" />
      <Compile Include="Assets\scripts\NewCode\CharacterScript.cs" />
