@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour
 	public RaycastHit2D whatIHit; 
 
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
-	private bool grounded = false;			// Whether or not the player is grounded.
+	//private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;		
 
 	// Reference to the player's animator component.
